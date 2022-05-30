@@ -1,5 +1,6 @@
 <template>
-  <div class="room">  
+<transition name="fade">
+  <div class="room" v-show="!isLoading">  
     <img
       class="room__rainbow" 
       src="../assets/icons/rainbow.png" 
@@ -67,6 +68,9 @@
       >
     </div>
   </div>
+</transition>
+
+  
 </template>
 
 <script>
@@ -89,6 +93,7 @@ export default {
   name: 'Room',
   data () {
     return {
+      isLoading: true,
       infoClose: false,
       modalClose: true,
       modalImg: ''
@@ -106,6 +111,9 @@ export default {
       this.modalClose = true
     }
   },
+  mounted () {
+    this.isLoading = false
+  }
 }
 </script>
 
@@ -118,7 +126,7 @@ img {
   width: 100vw;
   height: 100vh;
   background: #b99cd0;
-  border: 1px solid #b99cd0;
+  border: 0.1px solid transparent;
   & > img {
     position: absolute;
     top: 10px;
@@ -218,6 +226,13 @@ img {
   }
 }
 
+// vue enter/leave
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter {
+  opacity: 0;
+}
 
 // animation
 @keyframes kikiMove {

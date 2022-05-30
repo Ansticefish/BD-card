@@ -44,7 +44,7 @@ export default {
         this.showAlert = true
         setTimeout(()=> {
           this.$router.push('room')
-        }, 2000)  
+        }, 1500)  
       } else if (this.password.length === 4 && this.password !== "1324"){
         this.password = 'Wrong numbers!'
         setTimeout(()=> {
@@ -115,7 +115,7 @@ export default {
 
 
 .open {
-  animation: openDoor 2s linear;
+  animation: openDoor 3s linear;
 }
 
 @keyframes alert {
