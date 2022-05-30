@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import signIn from '../views/signIn'
+import SignIn from '../views/SignIn'
+import Room from '../views/Room'
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,17 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    components: signIn
+    redirect: 'signIn'
+  },
+  {
+    path: '/signIn',
+    name: 'sign-in',
+    component: SignIn,
+  },
+  {
+    path: '/room',
+    name: 'room',
+    component: Room
   }
 ]
 
