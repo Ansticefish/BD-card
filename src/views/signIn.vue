@@ -69,7 +69,7 @@ export default {
   justify-content: center;
   &__container {
     width: 70%;
-    height: 650px;
+    height: 80%;
     padding: 25px;
     background: #ffcc99;
     // to prevent border collapse
@@ -94,6 +94,7 @@ export default {
         background-color: #fff3c7;
         color: #8e8e8e;
         text-align: center;
+        font-size: 16px;
         &:focus {
           outline: 0.5px dashed #ffcc99;
         }

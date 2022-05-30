@@ -54,6 +54,7 @@
     </div>
     <div
       v-if="!modalClose" 
+      @click="closeModal"
       class="room__modal"
     >
       <img
@@ -149,7 +150,7 @@ img {
         position: absolute;
         bottom: 30px;
         right: 0;
-        height: 120px;
+        height: fit-content;
         width: 50vw;
         padding: 10px;
         background-color: rgb(22, 126, 245);
@@ -213,15 +214,16 @@ img {
   right: 0;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 99;
+  padding-left: 15px;
+  overflow-y: auto;
   &__btn {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 20px;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    width: 25px;
     z-index: 120;
   }
   &__card {
-    margin-top: 50px;
     width: 90vw;
   }
 }
